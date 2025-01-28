@@ -4,6 +4,7 @@ import {
   Box,
   Text,
   Grid,
+  Button,
   useColorModeValue,
   useStyleConfig
 } from "@chakra-ui/react";
@@ -11,14 +12,15 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import Navbar from "../../components/Navbar/Navbar";
 import routes from "../../routes";
 import dashboardimg from "../../assets/dashboard.gif";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Typewriter from "typewriter-effect";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Dashboard() {
   const [quote, setQuote] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const styles = useStyleConfig("Card");
 
   let highlightTextColor = useColorModeValue("rgb(130, 11, 138)", "rgb(209, 250, 255)");
@@ -32,18 +34,41 @@ export default function Dashboard() {
     }
   };
 
-  useEffect(() => {
-    axios
-      .get("http://api.quotable.io/random")
-      .then((response) => {
-        let content = response.data.content;
-        setQuote(content);
-      })
-      .catch((error) => {
-        setQuote("");
-        console.error("Error fetching quote:", error);
+  const fetchQuote = async (signal) => {
+    try {
+      const response = await axios.get("https://api.quotable.io/random", {
+        signal,
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        }
       });
+      setQuote(response.data.content);
+      setError(null);
+    } catch (error) {
+      if (!axios.isCancel(error)) {
+        setError(error);
+        setQuote("Failed to load daily quote. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    const controller = new AbortController();
+    
+    setLoading(true);
+    fetchQuote(controller.signal);
+
+    return () => controller.abort();
   }, []);
+
+  const handleRetry = () => {
+    setLoading(true);
+    setError(null);
+    fetchQuote();
+  };
 
   return (
     <Box>
@@ -124,21 +149,36 @@ export default function Dashboard() {
             textAlign="center"
             cursor="default"
             mt="20px"
+            minHeight="80px"
           >
-            Random Quote
+            <Text mb={2}>Random Quote</Text>
             <Box
               fontSize={{ sm: "1em", md: "1.3em", xl: "1.3em" }}
               color={highlightTextColor}
               cursor="default"
             >
-              {quote ? (
+              {loading ? (
+                <Text>Loading inspiration...</Text>
+              ) : error ? (
+                <Flex direction="column" gap={2}>
+                  <Text>{quote}</Text>
+                  <Button 
+                    size="sm" 
+                    onClick={handleRetry}
+                    colorScheme="purple"
+                  >
+                    Try Again
+                  </Button>
+                </Flex>
+              ) : (
                 <Typewriter
                   onInit={(typewriter) => {
-                    typewriter.typeString(quote).start();
+                    typewriter
+                      .changeDelay(50)
+                      .typeString(quote)
+                      .start();
                   }}
                 />
-              ) : (
-                <span>|</span>
               )}
             </Box>
           </Box>
