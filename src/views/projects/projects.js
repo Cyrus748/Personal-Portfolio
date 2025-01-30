@@ -52,65 +52,65 @@ export default function Projects() {
         >
           <ProjectCard
             projectImage={sportsmeet}
-            projectName={"Athletic Meet Registeration"}
-            aboutProject={"This is web and app based solution for flexible Athletic mett registeration for Guru Nanak Dev Engineering College . This consist of Attendance marking via manually with help of buttons as well as QR scan method , Dynamic Certificate Generation , Export Functionalities etc etc.. "}
-            techStack={"EXPRESS JS, NODE JS, IONIC , MONGODB, MATERIAL UI"}
-            projectLiveLink="https://sports2024.vercel.app/"
-            projectLink="https://github.com/Vansh1190/Sports22"
+            projectName={"BharatSanskriti - Cultural Heritage Archive"}
+            aboutProject={"TExplore the timeless wisdom of the Bhagavad Gita with in-depth shlokas, translations, and commentaries, connecting you to India's rich spiritual heritage. "}
+            techStack={" React, Node.js, MongoDB "}
+            projectLiveLink="https://bharat-sanskriti.vercel.app/"
+            projectLink="https://github.com/Cyrus748/BharatSanskriti"
           />
           <ProjectCard
             projectImage={Training}
-            projectName={"Training Tracker GNDEC"}
-            aboutProject={"This MERN stack project facilitates comprehensive management of student training and placement data. It enables students to input their training records, such as TR_101, TR_102, based on their academic year. The admin panel empowers teachers to view, lock, and export data with various filters, including certificates and reports, while ensuring secure authentication throughout the system."}
-            techStack={"REACT JS,  MATERIAL UI , NODE JS , MONGODB, EXPRESS JS"}
-            projectLiveLink="https://training-tracker-gndec.vercel.app/login"
-            projectLink="https://github.com/whogurdevil/training-tracker-gndec"
+            projectName={"CodeBlitz - Competitive Programming Hub"}
+            aboutProject={"Welcome to CodeBlitz ⚡! Inspired by OneCompiler.com, this project provides an interactive online coding environment that supports multiple programming languages."}
+            techStack={"React, Node.js, Express, MongoDB "}
+            projectLiveLink="https://code-blitz-code-runner.vercel.app/"
+            projectLink="https://github.com/Cyrus748/CodeBlitz-"
           />
           <ProjectCard
             projectImage={hukamnama}
-            projectName={"HUKAMNAMA TO IMAGE WINDOW APP"}
-            aboutProject={"This Electron JS application, built with TypeScript, provides a seamless solution for exporting daily Hukamnama Sahib as PNG images. Users can access the application to generate and save Hukamnama Sahib images effortlessly. The combination of Electron JS and TypeScript ensures efficient development and robust performance."}
-            techStack={"ELECTRON JS, TYPESCRIPT"}
-            projectLiveLink="Coming Soon!"
-            projectLink="https://github.com/whogurdevil/HukamNama"
+            projectName={"VibeCoin - Real-time Crypto Data & News"}
+            aboutProject={"VibeCoin is a React web application built using Vite that provides real-time cryptocurrency data and news."}
+            techStack={"React, Vite, WebSockets, Crypto APIs, Tailwind CSS"}
+            projectLiveLink="https://vibecoinbyaditya.vercel.app/"
+            projectLink="https://github.com/Cyrus748/VibeCoin"
           />
           <ProjectCard
             projectImage={Calculator}
-            projectName={"GPA Calculator"}
-            aboutProject={"GPA calculator tailored for GNDEC students, allowing them to input their marks, view results instantly, and generate detailed reports. With built-in support for various branches, the tool efficiently computes semester-wise grades, aiding students in tracking their academic progress seamlessly."}
-            techStack={"REACT JS,  MATERIAL UI"}
-            projectLiveLink="https://gndecsgpacalculator.vercel.app/"
-            projectLink="https://github.com/sangam2109/SgpaCalculator"
+            projectName={"PruneMind Chess Engine"}
+            aboutProject={"PruneMind is a Python-based chess engine that utilizes the Minimax algorithm with alpha-beta pruning to evaluate and make optimal moves. It features relative piece values inspired by AlphaZero and includes an entropy-based evaluation for more dynamic gameplay. The engine can play against a human opponent or simulate a match between two AI instances."}
+            techStack={"Python, Minimax, Custom Evaluation "}
+            projectLiveLink="https://github.com/Cyrus748/PruneMind"
+            projectLink="https://github.com/Cyrus748/PruneMind"
           />
           
           <ProjectCard
             projectImage={bootcamp} // Replace virtualLabImage with the actual image source
-            projectName={"Virtual Lab with IIT Roorkee"}
-            aboutProject={"Collaborative project with IIT Roorkee for basic electrical engineering virtual lab. Demonstrated practical simulations using HTML, CSS, JavaScript, and libraries like jsPlumb."}
-            techStack={"HTML, CSS, JavaScript, jsPlumb"}
-            projectLiveLink="https://sangam2109.github.io/Kirchooff-Law/Webpage/index.html" // Replace with the actual live link
-            projectLink="https://github.com/sangam2109/Kirchooff-Law" // Replace with the actual GitHub repository link
+            projectName={"Sorting-Algorithim-Visualizer"}
+            aboutProject={"The Sorting-Algorithm-Visualizer is a dynamic and interactive tool designed to help users visualize and understand various sorting algorithms."}
+            techStack={"React, Node.js, Express, MongoDB "}
+            projectLiveLink="https://sorting-algorithim-visualizer.vercel.app/" // Replace with the actual live link
+            projectLink="https://github.com/Cyrus748/Sorting-Algorithim-Visualizer" // Replace with the actual GitHub repository link
           />
 
           <ProjectCard
             projectImage={ques}
-            projectName={"Questener:NLP based questgen generator"}
-            aboutProject={"Generating a question based on data entered by used using Natural Language Processing"}
-            techStack={"FLASK, SPICY , NLTK , PANDA , TRANSFORMER , NUMPY , PYTHON"}
-            projectLiveLink="Coming  Soon!"
-            projectLink="https://github.com/sangam2109/hackathon"
+            projectName={"ERC20TokenETH"}
+            aboutProject={"This project demonstrates how to create a basic ERC20 token using Solidity. The ERC20 standard is a widely adopted token standard that defines functionalities for tokens on the Ethereum blockchain."}
+            techStack={"Solidity, Ethereum, ERC20 "}
+            projectLiveLink="https://github.com/Cyrus748/CreateERC20TokenETH-AVAX-Metacrafters"
+            projectLink="https://github.com/Cyrus748/CreateERC20TokenETH-AVAX-Metacrafters"
           />
           <ProjectCard
             projectImage={todo}
-            projectName={"Todo Web App"}
+            projectName={"Portfolio Website"}
             aboutProject={
-              "A website which is used for making todolist having drag and drop feature also"
+              "A modern showcase of development expertise and creative projects Built with passion and deployed with Vercel"
             }
             techStack={
-              "JAVASCRIPT, REACT JS , BOOTSTRAP, CSS, REDUX"
+              "JAVASCRIPT, REACT JS , BOOTSTRAP, TAILWIND, VERCEL, REDUX"
             }
-            projectLiveLink="https://todo-react-app-delta-one.vercel.app/"
-            projectLink="https://github.com/sangam2109/Todo-React-App"
+            projectLiveLink="https://devbyaditya.vercel.app/home"
+            projectLink="https://github.com/Cyrus748/Personal-Portfolio"
           />
           <ProjectCard
             projectImage={dictionary}
